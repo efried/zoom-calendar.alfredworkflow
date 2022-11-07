@@ -25,7 +25,7 @@ end
 # -po title,datetime,location,url,notes sets field order
 # -iep title,datetime,location,url,notes sets what fields to retrieve
 # eventsToday+2 shows "now plus two days"
-output = `/usr/local/bin/icalbuddy -ea -n -b '* ' -nnr " " -ps "|\\n|" -po title,datetime,location,url,notes -iep title,datetime,location,url,notes eventsToday+2 2>&1`
+output = `/opt/homebrew/bin/icalbuddy -ea -n -b '* ' -nnr " " -ps "|\\n|" -po title,datetime,location,url,notes -iep title,datetime,location,url,notes eventsToday+2 2>&1`
 error(output) if $? != 0
 
 events = output.split(/^\* /)[1..-1] || []
